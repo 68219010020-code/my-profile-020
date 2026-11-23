@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="profile-card">
+        <!-- 03 Dark Mode – ปุ่มสลับธีม -->
+        <div class="theme-switch-container">
+            <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="สลับโหมดสว่าง/โหมดมืด">
+                <span class="theme-icon">🌙</span>
+                <span class="theme-text">โหมดมืด</span>
+            </button>
+        </div>
+
+        <img
+            src="images/IMG_2424.JPG"
+            alt="รูปโปรไฟล์"
+            class="profile-image"
+        >
+
+        <h1>My Profile</h1>
+        <div class="profile-info">
+            <p>ชื่อ-นามสกุล: <span id="fullname">ภูพิรัฐ จิตรโสภา</span></p>
+            <p>ชื่อเล่น: <span id="nickname">จีโน่</span></p>
+            <p>รหัสประจำตัว: <span id="studentID">68219010020</span></p>
+        </div>
+
+        <section class="motto">
+            <h2>สาดไปสมาซิก</h2>
+            <p id="motto">ไม่แรง แต่รวย หวานเฉี๊ยบ</p>
+        </section>
+
+        <div class="greeting-box">
+            <button id="greetingBtn" type="button">ทักทาย</button>
+            <p id="greetingMessage">ฮายยยยฮ้ายยยย</p>
+        </div>
+
+        <!-- 01 Project Filter – ระบบกรองผลงาน -->
+        <section class="projects-section">
+            <h2>ผลงานของฉัน (Projects)</h2>
+            
+            <!-- ปุ่มเลือกหมวดหมู่ผลงาน -->
+            <div class="filter-controls" role="tablist" aria-label="เลือกหมวดหมู่ผลงาน">
+                <button type="button" class="filter-btn active" data-filter="all">ทั้งหมด</button>
+                <button type="button" class="filter-btn" data-filter="web">เว็บแอป (Web)</button>
+                <button type="button" class="filter-btn" data-filter="mobile">โมบายแอป (Mobile)</button>
+                <button type="button" class="filter-btn" data-filter="design">ดีไซน์ (Design)</button>
+            </div>
+
+            <!-- รายการผลงานตามหมวดหมู่ -->
+            <div class="projects-grid" id="projectsGrid">
+                <article class="project-card" data-category="web">
+                    <span class="project-badge badge-web">Web</span>
+                    <h3>เว็บไซต์ E-Commerce สั่งซื้อสินค้า</h3>
+                    <p>ระบบเว็บจำหน่ายสินค้าออนไลน์ พร้อมระบบตะกร้าสินค้า การคำนวณราคา และฟอร์มสั่งซื้อ</p>
+                </article>
+
+                <article class="project-card" data-category="web">
+                    <span class="project-badge badge-web">Web</span>
+                    <h3>เว็บไซต์พอร์ตโฟลิโอส่วนตัว</h3>
+                    <p>หน้าเว็บโปรไฟล์แบบ Responsive ออกแบบด้วย HTML5, CSS3 และ JavaScript</p>
+                </article>
+
+                <article class="project-card" data-category="mobile">
+                    <span class="project-badge badge-mobile">Mobile</span>
+                    <h3>แอปพลิเคชันบันทึกรายรับ-รายจ่าย</h3>
+                    <p>แอปพลิเคชันมือถือช่วยบันทึกการใช้จ่าย สรุปกราฟสถิติรายเดือน และวางแผนงบประมาณ</p>
+                </article>
+
+                <article class="project-card" data-category="mobile">
+                    <span class="project-badge badge-mobile">Mobile</span>
+                    <h3>แอปพลิเคชันจัดการตารางเรียนและงาน</h3>
+                    <p>แอปแจ้งเตือนตารางเรียน การบ้าน และกำหนดส่งงาน ช่วยเพิ่มประสิทธิภาพในการเรียน</p>
+                </article>
+
+                <article class="project-card" data-category="design">
+                    <span class="project-badge badge-design">Design</span>
+                    <h3>ออกแบบ UI Dashboard บนสมาร์ตโฟน</h3>
+                    <p>ออกแบบหน้าตาแอปพลิเคชันด้วย Figma คำนึงถึง UX/UI ที่เป็นมิตรต่อผู้ใช้งาน</p>
+                </article>
+
+                <article class="project-card" data-category="design">
+                    <span class="project-badge badge-design">Design</span>
+                    <h3>การออกแบบอัตลักษณ์แบรนด์และโลโก้</h3>
+                    <p>การสร้างสรรค์ตราสัญลักษณ์ โทนสี Mood & Tone และเอกสารนำเสนออัตลักษณ์ของแบรนด์</p>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

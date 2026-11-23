@@ -1,0 +1,339 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #f1f5f9;
+    --card-bg: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --heading-color: #0f172a;
+    --border-color: #e2e8f0;
+    --motto-bg: #f8fafc;
+    --motto-border: #3b82f6;
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    --btn-primary: #2563eb;
+    --btn-primary-hover: #1d4ed8;
+    --btn-filter-bg: #e2e8f0;
+    --btn-filter-text: #334155;
+    --btn-filter-active-bg: #2563eb;
+    --btn-filter-active-text: #ffffff;
+    --project-bg: #ffffff;
+    --project-border: #e2e8f0;
+    --project-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --badge-web-bg: #dbeafe;
+    --badge-web-text: #1d4ed8;
+    --badge-mobile-bg: #dcfce7;
+    --badge-mobile-text: #15803d;
+    --badge-design-bg: #fce7f3;
+    --badge-design-text: #be185d;
+}
+
+body.dark-mode {
+    --bg-color: #0b0f19;
+    --card-bg: #111827;
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --heading-color: #ffffff;
+    --border-color: #374151;
+    --motto-bg: #1f2937;
+    --motto-border: #60a5fa;
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    --btn-primary: #3b82f6;
+    --btn-primary-hover: #2563eb;
+    --btn-filter-bg: #1f2937;
+    --btn-filter-text: #d1d5db;
+    --btn-filter-active-bg: #3b82f6;
+    --btn-filter-active-text: #ffffff;
+    --project-bg: #1f2937;
+    --project-border: #374151;
+    --project-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --badge-web-bg: rgba(59, 130, 246, 0.2);
+    --badge-web-text: #93c5fd;
+    --badge-mobile-bg: rgba(34, 197, 94, 0.2);
+    --badge-mobile-text: #86efac;
+    --badge-design-bg: rgba(236, 72, 153, 0.2);
+    --badge-design-text: #f472b6;
+}
+
+body {
+    padding: 24px 16px;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.profile-card {
+    position: relative;
+    width: min(780px, 100%);
+    margin: 0 auto;
+    padding: 36px 32px 44px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 03 Dark Mode Switch Button */
+.theme-switch-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+}
+
+.theme-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    background-color: var(--motto-bg);
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    filter: brightness(0.95);
+    transform: translateY(-1px);
+}
+
+body.dark-mode .theme-toggle-btn:hover {
+    filter: brightness(1.2);
+}
+
+.profile-image {
+    display: block;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 16px;
+    border: 4px solid #8c00ff;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 35%;
+    box-shadow: 0 4px 14px rgba(140, 0, 255, 0.3);
+}
+
+h1 {
+    margin-bottom: 16px;
+    color: var(--heading-color);
+    font-size: 34px;
+    text-align: center;
+}
+
+.profile-info p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: var(--text-primary);
+}
+
+.profile-info p span {
+    font-weight: 600;
+}
+
+.motto {
+    margin: 24px 0 20px;
+    padding: 20px;
+    border-left: 5px solid var(--motto-border);
+    border-radius: 10px;
+    background-color: var(--motto-bg);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.motto h2 {
+    margin-bottom: 8px;
+    color: var(--heading-color);
+    font-size: 22px;
+}
+
+.motto p {
+    font-size: 18px;
+    color: var(--text-secondary);
+}
+
+.greeting-box {
+    margin: 20px 0 32px;
+}
+
+button#greetingBtn {
+    padding: 10px 26px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--btn-primary);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button#greetingBtn:hover {
+    background-color: var(--btn-primary-hover);
+    transform: translateY(-1px);
+}
+
+#greetingMessage {
+    margin-top: 10px;
+    font-size: 18px;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* 01 Project Filter Styles */
+.projects-section {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border-color);
+}
+
+.projects-section h2 {
+    color: var(--heading-color);
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.filter-btn {
+    padding: 8px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background-color: var(--btn-filter-bg);
+    color: var(--btn-filter-text);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+    filter: brightness(0.95);
+    transform: translateY(-2px);
+}
+
+body.dark-mode .filter-btn:hover {
+    filter: brightness(1.2);
+}
+
+.filter-btn.active {
+    background-color: var(--btn-filter-active-bg);
+    color: var(--btn-filter-active-text);
+    border-color: var(--btn-filter-active-bg);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--project-bg);
+    border: 1px solid var(--project-border);
+    border-radius: 14px;
+    box-shadow: var(--project-shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+body.dark-mode .project-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-card.hidden {
+    display: none;
+}
+
+.project-badge {
+    align-self: flex-start;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.badge-web {
+    background-color: var(--badge-web-bg);
+    color: var(--badge-web-text);
+}
+
+.badge-mobile {
+    background-color: var(--badge-mobile-bg);
+    color: var(--badge-mobile-text);
+}
+
+.badge-design {
+    background-color: var(--badge-design-bg);
+    color: var(--badge-design-text);
+}
+
+.project-card h3 {
+    margin-bottom: 8px;
+    color: var(--heading-color);
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+.project-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    body {
+        padding: 12px 8px;
+    }
+
+    .profile-card {
+        padding: 24px 18px;
+        border-radius: 16px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .profile-info p,
+    .motto p,
+    #greetingMessage {
+        font-size: 16px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-btn {
+        padding: 6px 14px;
+        font-size: 14px;
+    }
+}
